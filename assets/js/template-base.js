@@ -37,7 +37,6 @@ class TemplateBase {
       footerRadioName: options.footerRadioNameId || 'footer-radio-name',
       trackTitle: options.trackTitleId || 'track-title',
       trackArtist: options.trackArtistId || 'track-artist',
-      listenersCount: options.listenersCountId || 'listeners-count',
       audioQuality: options.audioQualityId || 'audio-quality',
       bitrate: options.bitrateId || 'bitrate',
       trackArtwork: options.trackArtworkId || 'track-artwork',
@@ -181,7 +180,6 @@ class TemplateBase {
     const titleEl = document.getElementById(this.domIds.trackTitle);
     const artistEl = document.getElementById(this.domIds.trackArtist);
     console.log('TemplateBase: titleEl:', titleEl, 'artistEl:', artistEl);
-    const listenersEl = document.getElementById(this.domIds.listenersCount);
     const qualityEl = document.getElementById(this.domIds.audioQuality);
     const bitrateEl = document.getElementById(this.domIds.bitrate);
     const artworkEl = document.getElementById(this.domIds.trackArtwork);
@@ -204,7 +202,6 @@ class TemplateBase {
       artistEl.textContent = artist;
       console.log('TemplateBase: Set artist to:', artistEl.textContent);
     }
-    if (listenersEl) listenersEl.textContent = songData.listeners || '0';
     if (qualityEl) qualityEl.textContent = songData.bitrate ? `${songData.bitrate}k` : 'HD';
     if (bitrateEl) bitrateEl.textContent = songData.bitrate || 'N/A';
 

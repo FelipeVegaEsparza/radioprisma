@@ -80,7 +80,6 @@ templates/
 <!-- Elementos de metadata (IDs configurables) -->
 <span id="track-title">Radio</span>
 <span id="track-artist">En Vivo</span>
-<span id="listeners-count">0</span>
 <span id="bitrate">N/A</span>
 <span id="audio-quality">HD</span>
 <img id="track-artwork" src="" style="display: none;">
@@ -586,8 +585,6 @@ Endpoint externo configurado en `config.json` → `sonicpanel_api_url`. Transfor
   "artist": "Artist Name",
   "fullTitle": "Artist - Song Title",
   "art": "https://.../album-art.jpg",
-  "listeners": 42,
-  "uniqueListeners": 38,
   "bitrate": "128",
   "djUsername": "DJ Name",
   "djProfile": "https://...",
@@ -630,7 +627,6 @@ class MiTemplate extends TemplateBase {
         footerRadioName: 'footer-title',
         trackTitle: 'track-title',
         trackArtist: 'track-artist',
-        listenersCount: 'listeners-count',
         bitrate: 'bitrate',
         audioQuality: 'audio-quality',
         trackArtwork: 'track-artwork',
@@ -1386,8 +1382,6 @@ class MiTemplate extends TemplateBase {
   }
 
   onCurrentSongLoaded(songData) {
-    const listenersEl = document.getElementById('sidebar-listeners');
-    if (listenersEl) listenersEl.textContent = songData.listeners || '0';
     const historyEl = document.getElementById('recent-tracks');
     if (historyEl && songData.history) {
       // Actualizar tracks recientes en vivo
@@ -1634,7 +1628,6 @@ onCurrentSongLoaded(songData) {
 | Volume slider | `volume-slider` | Sí |
 | Track title | `track-title` | Sí |
 | Track artist | `track-artist` | Sí |
-| Oyentes | `listeners-count` | No |
 | Bitrate | `bitrate` | No |
 | Calidad | `audio-quality` | No |
 | Artwork | `track-artwork` | No |

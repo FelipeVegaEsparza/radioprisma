@@ -19,7 +19,6 @@ class BlueTemplate extends TemplateBase {
         footerRadioName: 'footer-title',
         trackTitle: 'player-song-title',
         trackArtist: 'player-song-artist',
-        listenersCount: 'player-listeners',
         bitrate: 'player-bitrate',
         trackArtwork: 'track-artwork',
         defaultArtwork: 'default-artwork',
@@ -404,12 +403,7 @@ class BlueTemplate extends TemplateBase {
 
   // Actualizar estadísticas de la sidebar
   updateSidebarStats(songData) {
-    const listenersEl = document.getElementById('sidebar-listeners');
     const songsEl = document.getElementById('sidebar-songs');
-    
-    if (listenersEl) {
-      listenersEl.textContent = songData.listeners || '0';
-    }
     
     if (songsEl && songData.history) {
       songsEl.textContent = songData.history.length || '0';

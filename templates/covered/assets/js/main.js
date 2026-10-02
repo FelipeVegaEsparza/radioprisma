@@ -15,7 +15,6 @@ class CoveredTemplate extends TemplateBase {
         footerRadioName: 'footer-title',
         trackTitle: 'track-title-main',
         trackArtist: 'track-artist-main',
-        listenersCount: 'listeners-count',
         bitrate: 'bitrate',
         audioQuality: 'audio-quality',
         trackArtwork: 'track-artwork',
@@ -899,8 +898,6 @@ class CoveredTemplate extends TemplateBase {
   }
 
   onCurrentSongLoaded(songData) {
-    const listenersEl = document.getElementById('sidebar-listeners');
-    if (listenersEl) listenersEl.textContent = songData.listeners || '0';
     const songsEl = document.getElementById('sidebar-songs');
     if (songsEl && songData.history) songsEl.textContent = songData.history.length || '0';
     this._updateMiniPlayer(songData);

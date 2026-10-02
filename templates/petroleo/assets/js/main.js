@@ -18,7 +18,6 @@ class PetroleoTemplate extends TemplateBase {
         footerRadioName: 'footer-title',
         trackTitle: 'player-song-title',
         trackArtist: 'player-song-artist',
-        listenersCount: 'listeners-count',
         bitrate: 'bitrate',
         audioQuality: 'sidebar-quality',
         trackArtwork: 'track-artwork',
@@ -963,12 +962,6 @@ class PetroleoTemplate extends TemplateBase {
   // Sobrescribir: Cuando se carga la canción actual
   onCurrentSongLoaded(songData) {
     console.log('PetroleoTemplate: onCurrentSongLoaded called', songData);
-
-    // Update sidebar listeners
-    const listenersEl = document.getElementById('sidebar-listeners');
-    if (listenersEl) {
-      listenersEl.textContent = songData.listeners || '0';
-    }
 
     // Update recent tracks
     const tracksEl = document.getElementById('recent-tracks');

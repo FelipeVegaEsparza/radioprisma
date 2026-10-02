@@ -14,7 +14,6 @@ class TradicionalTemplate extends TemplateBase {
         footerRadioName: 'footer-radio-name',
         trackTitle: 'track-title',
         trackArtist: 'track-artist',
-        listenersCount: 'listeners-count',
         bitrate: 'bitrate',
         audioQuality: 'audio-quality',
         trackArtwork: 'track-artwork',

@@ -115,7 +115,6 @@ class PlaylistTemplate extends TemplateBase {
   updateCurrentSongDisplay(songData) {
     super.updateCurrentSongDisplay(songData);
     
-    const listeners = songData.listeners || '0';
     const bitrate = songData.bitrate || 'N/A';
     
     // Actualizar texto del reproductor inferior
@@ -124,10 +123,8 @@ class PlaylistTemplate extends TemplateBase {
     if (playerTitle) playerTitle.textContent = songData.title || 'Radio';
     if (playerArtist) playerArtist.textContent = songData.artist || 'En Vivo';
     
-    // Oyentes y calidad del reproductor inferior
-    const playerListenerCount = document.getElementById('player-listener-count');
+    // Calidad del reproductor inferior
     const playerBitrateValue = document.getElementById('player-bitrate-value');
-    if (playerListenerCount) playerListenerCount.textContent = listeners;
     if (playerBitrateValue) playerBitrateValue.textContent = bitrate;
     
     // Actualizar artwork del reproductor inferior
@@ -168,10 +165,8 @@ class PlaylistTemplate extends TemplateBase {
       mainSongArtist.textContent = songData.artist || 'En Vivo';
     }
     
-    // Oyentes y bitrate del reproductor principal (arriba)
-    const mainListeners = document.getElementById('main-listeners');
+    // Bitrate del reproductor principal (arriba)
     const mainBitrate = document.getElementById('main-bitrate');
-    if (mainListeners) mainListeners.innerHTML = `<i class="fas fa-users"></i> ${listeners} oyentes`;
     if (mainBitrate) mainBitrate.innerHTML = `<i class="fas fa-signal"></i> ${bitrate} kbps`;
     
     // Actualizar artwork del reproductor principal (arriba)

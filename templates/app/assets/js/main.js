@@ -14,7 +14,6 @@ class AppTemplate extends TemplateBase {
         footerRadioName: 'footer-title',
         trackTitle: 'track-title-main',
         trackArtist: 'track-artist-main',
-        listenersCount: 'listeners-count',
         bitrate: 'bitrate',
         trackArtwork: 'track-artwork',
         defaultArtwork: 'default-artwork',
